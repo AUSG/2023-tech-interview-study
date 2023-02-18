@@ -2,12 +2,12 @@
 상반기 신입 공채 취준 스터디
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Assignments
 - [AllyHyeseongKim](https://github.com/allyhyeseongkim/)
-    - 코딩테스트: 첫 날 알고리즘 복습, 이후 매일 3문제
+    - 코딩테스트: 매주 3일 알고리즘 복습 + 3일 3문제 풀기(알고리즘 복습 끝난 후 매일 3문제 풀기)
     - 기술 면접: 매주 두 과목 복습
 - [Sunhyo](https://github.com/daysandmoons1)
     - 코딩테스트: 
