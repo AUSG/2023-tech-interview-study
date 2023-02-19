@@ -2,7 +2,7 @@
 
 > _그래프의 각 정점을 방문하는 과정; DFS와 BFS의 2가지 알고리즘 존재_
 
-- **정점(v; vertex)**과 **간선(e; edge)**의 집합
+- 정점(v; vertex)과 간선(e; edge)의 집합
 
 **그래프 표현 방법의 두 가지**
 
@@ -10,8 +10,8 @@
   - key: 출발 노드, value: 도착 노드
 - 인접 리스트 (Adjacency List)
   - 정점 개수만큼 인접 리스트 생성
+<br>      
 
----
 
 ## DFS (_Depth-First Search, 깊이 우선 탐색)_
 
@@ -21,6 +21,8 @@
 - 백트래킹을 통해 뛰어난 구현을 보임
 - 데이터 개수가 N인 경우, 시간복잡도는 O(N)
 - BFS보다 검색 속도는 느리지만, 더 간단하고 널리 쓰임
+<br>      
+
 
 **⍢ 스택으로 구현한 DFS**
 
@@ -45,6 +47,8 @@ def iterative_dfs(start_v):
 		return discovered
 ```
 
+<br>      
+
 **⍢ 재귀 구조로 구현한 DFS**
 
 ```python
@@ -55,6 +59,8 @@ def recursive_dfs(v, discovered=[]):
 			discovered = recursive_dfs(w, discovered)
 	return discovered
 ```
+<br>      
+
 
 ### 백트래킹
 
@@ -63,8 +69,9 @@ def recursive_dfs(v, discovered=[]):
 - 제약 충족 문제(CSP; Constraint Satisfaction Problem)에 특히 유용
   - CSP: 수많은 제약조건을 충족하는 상태를 찾아내는 문제
 - 주로 재귀로 구현
+<br>      
 
----
+
 
 ## BFS _(Breadth-First Search, 너비 우선 탐색)_
 
@@ -76,6 +83,8 @@ def recursive_dfs(v, discovered=[]):
 - 데이터 개수가 N인 경우, 시간복잡도는 O(N)
   - 실제 수행 시간은 DFS보다 좋음
 - BFS는 재귀적으로 동작하지 않는다.
+<br>      
+
 
 **⍢ 큐를 이용한 BFS**
 
