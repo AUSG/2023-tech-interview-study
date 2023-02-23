@@ -16,8 +16,8 @@
     - 코딩테스트: 
     - 기술 면접: 
 - [Beomsic](https://github.com/qjatjr29)
-    - 코딩테스트: 
-    - 기술 면접: 
+    - 코딩테스트: 매일 1-2 문제 
+    - 기술 면접: 매주 두 과목 정리 / 복습
 
 ## Contributors
 
