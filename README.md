@@ -1,23 +1,27 @@
 # 2023-tech-interview-study
+
 상반기 신입 공채 취준 스터디
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Assignments
+
 - [AllyHyeseongKim](https://github.com/allyhyeseongkim/)
-    - 코딩테스트: 첫 날 알고리즘 복습, 이후 매일 3문제
-    - 기술 면접: 매주 두 과목 복습
+  - 코딩테스트: 첫 날 알고리즘 복습, 이후 매일 3문제
+  - 기술 면접: 매주 두 과목 복습
 - [Sunhyo](https://github.com/daysandmoons1)
-    - 코딩테스트: 
-    - 기술 면접: 
+  - 코딩테스트:
+  - 기술 면접:
 - [ziwooda](https://github.com/ziwooda)
-    - 코딩테스트: 
-    - 기술 면접: 
+  - 코딩테스트: 매주 둘 이상 알고리즘 정리 및 최소 3문제 풀이 (알고리즘 복습 후 매주 4-5문제 풀이)
+  - 기술 면접: 매주 한 과목씩 정리 및 복습 (알고리즘 복습 후 두 과목씩 정리)
 - [Beomsic](https://github.com/qjatjr29)
-    - 코딩테스트: 
-    - 기술 면접: 
+  - 코딩테스트:
+  - 기술 면접:
 
 ## Contributors
 
