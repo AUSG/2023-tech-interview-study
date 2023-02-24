@@ -7,6 +7,8 @@ case2. 벌-벌-벌집 / 벌집-벌-벌
 testcase.
 7
 9 9 4 1 4 9 9
+-           -
+
 '''
 
 import sys
@@ -24,10 +26,10 @@ for _ in range(1, N-1):
     honey = sum(loc[1:]) - loc[_] + sum(loc[_+1:])
     maxhoney = max(honey, maxhoney)
 
-# 벌집-벌-벌 --> 리스트를 역정렬한 후 동일 방식으로 진행
+# 벌집-벌-벌
 nloc = list(reversed(loc))
 for _ in range(1, N-1):
-    honey = sum(loc[1:]) - nloc[_] + sum(nloc[_+1:])
+    honey = sum(nloc[1:]) - nloc[_] + sum(nloc[_+1:])
     maxhoney = max(honey, maxhoney)
 
 print(maxhoney)
