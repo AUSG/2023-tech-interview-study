@@ -11,7 +11,7 @@
 ## Assignments
 
 - [AllyHyeseongKim](https://github.com/allyhyeseongkim/)
-  - 코딩테스트: 첫 날 알고리즘 복습, 이후 매일 3문제
+  - 코딩테스트: 매주 3일 알고리즘 복습 + 3일 3문제 풀기(알고리즘 복습 끝난 후 매일 3문제 풀기)
   - 기술 면접: 매주 두 과목 복습
 - [Sunhyo](https://github.com/daysandmoons1)
   - 코딩테스트:
@@ -20,8 +20,8 @@
   - 코딩테스트: 매주 둘 이상 알고리즘 정리 및 최소 3문제 풀이 (알고리즘 복습 후 매주 4-5문제 풀이)
   - 기술 면접: 매주 한 과목씩 정리 및 복습 (알고리즘 복습 후 두 과목씩 정리)
 - [Beomsic](https://github.com/qjatjr29)
-  - 코딩테스트:
-  - 기술 면접:
+  - 코딩테스트: 매일 1-2 문제 
+  - 기술 면접: 매주 두 과목 정리 / 복습
 
 ## Contributors
 
