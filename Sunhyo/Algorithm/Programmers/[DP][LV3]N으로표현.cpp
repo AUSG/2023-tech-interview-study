@@ -1,54 +1,72 @@
-#include <vector> 
-#include <unordered_set> 
+#include <string>
+#include <vector>
+#include <set>
+
 using namespace std;
 
-int get_Ns(int N, int idx) {
-    // NN(idx==1), NNN(idx==2), NNNN(idx==3)...°ú °°Àº ÇüÅÂ¸¸µå´Â ÇÔ¼ö
-    int result = N;
-    for (int i = 1; i <= idx; i++) {
-        result = result * 10 + N;
-    }
-    return result;
-}
+set<int> s;
+vector<int> v[10];
+int container[4] = {0, };
 
 int solution(int N, int number) {
-    if (N == number) return 1;  // N°ú number°¡ °°´Ù¸é, NÀ» ÇÑ¹ø »ç¿ëÇØ¼­ number¸¦ ¸¸µé ¼ö ÀÖÀ½
-
-    vector< unordered_set<int> > DP(8);
-    //DP¿¡ ÀúÀåÇÒ °Í -> DP[i] : i°³ÀÇ NÀ¸·Î ¸¸µé ¼ö ÀÖ´Â ¼ıÀÚµé (set)
-
-    DP[0].insert(N); // ÇÑ°³ÀÇ NÀ¸·Î ¸¸µé ¼ö ÀÖ´Â ¼ö´Â N»ÓÀÓ
-
-    for (int k = 1; k < 8; k++) {
-
-        // DP[k]¿¡ NNN...(k+1¸¸Å­ ¹İº¹)°ú °°Àº ÇüÅÂ »ğÀÔ
-        DP[k].insert(get_Ns(N, k));
-
-        // DP[k]¿¡ »çÄ¢ ¿¬»êÀÇ °á°ú¶ÇÇÑ »ğÀÔ
-        for (int i = 0; i < k; i++) {
-            for (int j = 0; j < k; j++) {
-                if (i + j + 1 != k) continue;
-                // i+j+1 == k ÀÏ¶§
-                for (int a : DP[i]) {
-                    for (int b : DP[j]) {
-                        DP[k].insert(a + b);
-                        // °Ë»ç°¡ ÇÊ¿äÇÑ ¿¬»êµé
-
-                        // (1) À½¼ö Á¸ÀçÇÏ¸é ¾ÈµÊ
-                        if (a - b > 0)
-                            DP[k].insert(a - b);
-
-                        DP[k].insert(a * b);
-
-                        // (2) 0 Á¸ÀçÇÏ¸é ¾ÈµÊ
-                        if (a / b > 0) DP[k].insert(a / b);
+    int answer = 0;
+    string str = "";
+    int temp = 0;
+    
+    s.insert(0);
+    v[0].push_back(0);
+    
+    for(int i=1; i<=8; i++)
+    {
+        str += to_string(N);
+        temp = stoi(str);
+        
+        s.insert(temp);
+        v[i].push_back(temp);
+    }
+    
+    for(int i=1; i<=8; i++)
+    {
+        for(int j=0; j<=i/2; j++)
+        {
+            // í° ê°œìˆ˜ì˜ ë²¡í„°
+            for(int k=0; k<v[i-j].size(); k++)
+            {
+                // ì‘ì€ ê°œìˆ˜ì˜ ë²¡í„°
+                for(int l=0; l<v[j].size(); l++)
+                {
+                    // ì—°ì‚°êµ°!
+                    container[0] = v[i-j][k] + v[j][l];
+                    container[1] = v[i-j][k] - v[j][l];                    
+                    container[2] = v[i-j][k] * v[j][l];
+                    if(v[i-j][k] != 0 && v[j][l] != 0)
+                        container[3] = v[i-j][k] / v[j][l];
+                    else
+                        container[3] = 0;
+                    
+                    for(int m=0; m<4; m++)
+                    {
+                        if(container[m] == number)
+                        {
+                            return i;
+                        }
+                        
+                        if(s.find(container[m]) == s.end())
+                        {
+                            s.insert(container[m]);
+                            v[i].push_back(container[m]);
+                            
+                            if(s.find(-container[m]) == s.end())
+                            {
+                                s.insert(-container[m]);
+                                v[i].push_back(-container[m]);
+                            }
+                        }
                     }
                 }
             }
         }
-
-        if (DP[k].find(number) != DP[k].end()) //DP set¿¡ number¿¡ ÇØ´çÇÏ´Â °ªÀÌ ÀÖÀ¸¸é k+1À» ¹İÈ¯
-            return k + 1;
     }
+    
     return -1;
 }
