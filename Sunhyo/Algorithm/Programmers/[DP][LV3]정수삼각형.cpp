@@ -1,23 +1,32 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+
 using namespace std;
-int dp[500][500];
+
+int table[501][501] = {0, };
+
 int solution(vector<vector<int>> triangle) {
     int answer = 0;
-    int n = triangle.size();
-    dp[0][0] = triangle[0][0];
-    for(int i = 1; i<n; i++){
-        for(int j = 0; j<=i; j++){
-            if(j==0) dp[i][j] = dp[i-1][0] + triangle[i][j];
-            else if(j==i) dp[i][j] = dp[i-1][i-1] + triangle[i][j];
-            else{
-                dp[i][j] = max(dp[i-1][j-1], dp[i-1][j]) + triangle[i][j];
-            }
+    int len = triangle.size();
+    
+    table[0][0] = triangle[0][0];
+    
+    for(int y=1; y<len; y++)
+    {
+        for(int x=0; x<triangle[y].size(); x++)
+        {
+            if(x == 0)
+                table[y][x] = table[y-1][x] + triangle[y][x];
+            else
+                table[y][x] = triangle[y][x] + max(table[y-1][x], table[y-1][x-1]);
         }
     }
-    for(int i = 0; i < n;i++){
-        if(answer < dp[n-1][i]) answer = dp[n-1][i];
+    
+    for(int i=0; i<len; i++)
+    {
+        answer = max(answer, table[len-1][i]);
     }
+    
     return answer;
 }
