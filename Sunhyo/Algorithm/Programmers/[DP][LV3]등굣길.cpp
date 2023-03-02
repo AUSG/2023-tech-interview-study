@@ -4,66 +4,53 @@
 
 using namespace std;
 
-int table[102][102] = {0, };
+int puddle[102][102] = {0, };
 int visitied[102][102] = {0, };
+int dp[102][102] = {0, }; // 길 개수
 
-int dx[4] = {1, 0, -1, 0};
-int dy[4] = {0, 1, 0, -1};
+int dy[2] = {0, 1};
+int dx[2] = {1, 0};
 
 int solution(int m, int n, vector<vector<int>> puddles) {
     int answer = 0;
-    
-    vector<int> answers;
-    queue<pair<pair<int, int>, int>> q; // 노드(y, x), 깊이
-    int depth, curX, curY, newX, newY;
+    queue<pair<int, int>> q;
     
     for(int i=0; i<puddles.size(); i++)
-        table[puddles[i][1]][puddles[i][0]] = 1;
+        puddle[puddles[i][1]][puddles[i][0]] = 1;
     
-    q.push({{1, 1}, 0});
+    dp[1][1] = 1;
+    q.push({1, 1});
+    
+    int curY, curX, newY, newX;
     
     while(!q.empty())
     {
-        curY = q.front().first.first;
-        curX = q.front().first.second;
-        depth = q.front().second; q.pop();
-
-        for(int i=0; i<4; i++)
+        curY = q.front().first;
+        curX = q.front().second; q.pop();
+        
+        if(curX == m && curY == n)
+            break;
+        
+        for(int i=0; i<2; i++)
         {
             newY = curY + dy[i];
             newX = curX + dx[i];
-
-            if(newY < 1 || newY > n || newX < 1 || newX > m)
+            
+            if(puddle[newY][newX])
                 continue;
-
-            if(visitied[newY][newX] || table[newY][newX])
+            
+            if(newX < 1 || newX > m || newY < 1 || newY > n)
                 continue;
-
-            if(newY == n && newX == m)
+            
+            dp[newY][newX] += (dp[curY][curX] % 1000000007);
+            
+            if(!visitied[newY][newX])
             {
-                answers.push_back(depth+1);
-                continue;
+                visitied[newY][newX] = 1;
+                q.push({newY, newX});
             }
-            
-            visitied[curY][curX] = 1;
-            
-            q.push({{newY, newX}, depth+1});
         }
     }
     
-    answer = 1;
-    int minDistance = answers[0];
-    for(int i=1; i<answers.size(); i++)
-    {
-        if(minDistance < answers[i])
-        {
-            minDistance = answers[i];
-            answer = 1;
-        }
-        else if(minDistance == answers[i])
-            answer++;
-    }
-    
-    return answer % 1000000007;
+    return dp[n][m] % 1000000007;
 }
-              
