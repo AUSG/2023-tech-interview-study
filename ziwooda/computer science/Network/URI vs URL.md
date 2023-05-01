@@ -6,27 +6,25 @@
 
 <br>
 
-## URI
-
-- Uniform Resource Identifier, 통합 자원 식별자
-- 인터넷의 자원을 식별할 수 있는 문자열이자 인터넷에 있는 자원을 나타내는 유일 주소
+## URI (Uniform Resource Identifier)
+- **인터넷의 자원을 식별할 수 있는 문자열**이자 인터넷에 있는 자원을 나타내는 유일 주소
 - URL, URN 개념 모두 포함
 
-## URL
-
-- Uniform Resource Locator
-- 네트워크 상에서 웹페이지, 이미지, 동영상 등의 파일이 위치한 정보
+## URL (Uniform Resource Locator)
+- 네트워크 상에서 웹페이지, 이미지, 동영상 등의 **파일이 위치한 정보**
 - FTP, SFTP 등 다른 프로토콜에서 사용
 - REST API: 더 효율적으로 리소스에 접근하기 위해 등장한 url 작성 방법론의 하나
 - URI와 개념의 거의 동일
 
 <br>
 
-### Summary
-**❗️URL과 URN❗️**
+### Comparison of URL and URN
+⍢ URL: 어떻게 리소스를 얻을 것이고, 어디에서 가져와야 하는지 명시하는 URI
+⍢ URN: 리소스를 어떻게 접근할 것인지 명시하지 않고 경로와 리소스 자체를 특정하는 URI
 
-URL: 어떻게 리소스를 얻을 것이고, 어디에서 가져와야 하는지 명시하는 URI
-URN: 리소스를 어떻게 접근할 것인지 명시하지 않고 경로와 리소스 자체를 특정하는 URI
+> URI는 URL이다 ⭕
+> URL을 포함한 URI ⭕
+> URL은 URI이다 ❌
 
 <br>
 
@@ -50,8 +48,3 @@ URI: entire address
 URL: protocol ~ path
 
 URN: host ~ query string
-
-<br>
-> URI는 URL이다 ⭕
-> URL을 포함한 URI ⭕
-> URL은 URI이다 ❌
