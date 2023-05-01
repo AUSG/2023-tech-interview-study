@@ -19,11 +19,11 @@
 <br>
 
 ### Comparison of URL and URN
-⍢ URL: 어떻게 리소스를 얻을 것이고, 어디에서 가져와야 하는지 명시하는 URI
+⍢ URL: 어떻게 리소스를 얻을 것이고, 어디에서 가져와야 하는지 명시하는 URI   
 ⍢ URN: 리소스를 어떻게 접근할 것인지 명시하지 않고 경로와 리소스 자체를 특정하는 URI
 
-> URI는 URL이다 ⭕
-> URL을 포함한 URI ⭕
+> URI는 URL이다 ⭕   
+> URL을 포함한 URI ⭕   
 > URL은 URI이다 ❌
 
 <br>
@@ -39,12 +39,13 @@
 
 <br>
 
+## Summary
 http  ://  opentutorials.org  :  3000  /  main  ?  id=HTML&page=12
 
 ⇒ {protocol} :// {host(domain)} : {port} / {path} ? {query string}
 
-URI: entire address
+⍢ URI: entire address
 
-URL: protocol ~ path
+⍢ URL: protocol ~ path
 
-URN: host ~ query string
+⍢ URN: host ~ query string
