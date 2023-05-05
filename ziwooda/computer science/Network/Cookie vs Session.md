@@ -25,7 +25,7 @@
 
 ## 쿠키 동작 방식
 
-<img src="https://user-images.githubusercontent.com/70079416/236422600-4cbc4252-4221-492e-bcdd-b3baf8473e48.png" width="60%" height="60%" />
+<img src="https://user-images.githubusercontent.com/70079416/236422600-4cbc4252-4221-492e-bcdd-b3baf8473e48.png" width="70%" height="70%" />
 
 1. 클라이언트가 페이지를 요청
 2. 서버는 쿠키를 생성하고, HTTP 헤더에 쿠키를 포함시켜 응답 전송
@@ -83,7 +83,7 @@
 
 ## Comparison Table
 
-<img src="https://user-images.githubusercontent.com/70079416/236423133-ddbf7dc9-5cdb-4674-b305-9384dea1b9e7.png" width="60%" height="60%" />
+<img src="https://user-images.githubusercontent.com/70079416/236423133-ddbf7dc9-5cdb-4674-b305-9384dea1b9e7.png" width="80%" height="80%" />
 
 
 <br>
